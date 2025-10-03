@@ -29,3 +29,11 @@ model.fit(x_train, y_train, epochs=5)
 # Evaluate the model on the test data
 test_loss, test_acc = model.evaluate(x_test, y_test)
 print(f"Test accuracy: {test_acc}")
+
+# Make a prediction
+predictions = model.predict(x_test)
+
+# Show an example image and its prediction
+plt.imshow(x_test[0], cmap=plt.cm.binary)
+plt.title(f"Prediction: {predictions[0].argmax()}")
+plt.show()
